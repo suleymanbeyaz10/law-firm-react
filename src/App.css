@@ -1,3 +1,6 @@
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+
 .App {
   text-align: center;
 }
@@ -36,3 +39,98 @@
     transform: rotate(360deg);
   }
 }
+
+.nav-link {
+  transition: opacity 0.3s ease;
+}
+
+.nav-link:hover {
+  opacity: 0.5;
+}
+
+/*
+Service style css start.
+*/
+
+.service-box {
+  padding: 20px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.service-box:hover {
+  background-color: #aaa;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.icon {
+  color: #333;
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.desc h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.desc p {
+  margin: 0;
+}
+
+/*
+Service style css end.
+*/
+
+/*
+Blog posts style css start. 
+*/
+
+.post {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.entry-header,
+.entry-content,
+.author-info {
+  text-align: center;
+}
+
+.author-info {
+  font-style: italic;
+  color: #666666;
+  margin-top: 20px;
+}
+
+.entry-meta a {
+  color: #0077cc;
+  text-decoration: none;
+}
+
+.entry-meta a:hover {
+  text-decoration: underline;
+}
+
+.entry-content p {
+  line-height: 1.6;
+  color: #333;
+}
+
+.img-style {
+  width: "100px";
+  height: "100px";
+  padding-bottom: 6px;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+/*
+ Blog posts style css end.
+ */
