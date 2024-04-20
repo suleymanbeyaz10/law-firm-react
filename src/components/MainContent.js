@@ -11,7 +11,7 @@ function MainContent() {
           <h1 className="display-4">Önde Gelen Hukuk Büromuza Hoş Geldiniz</h1>
           <p className="lead mt-3">
             İhtiyacınıza özel olarak hazırlanmış benzersiz profesyonel hukuki
-            hizmetlerimizi deneyimleyin. Uzman ekibimiz, her türlü hukuki
+            hizmetlerimizi deneyimleyin. Uzman kadromuz, her türlü hukuki
             ihtiyacınızda yanınızda olmak için burada.
           </p>
           <Link to="/services">
