@@ -13,8 +13,8 @@ function About() {
             müvekkillerimize hukuki temsil ve danışmanlık hizmetleri sunma
             konusunda kendini adamıştır. Kuruluşumuzdan bu yana, her bir
             müvekkilin benzersiz ihtiyaçlarını derinlemesine anlamayı ve onlara
-            özel çözümler geliştirmeyi öncelik haline getirdik. Adaletin
-            sağlanmasını garantilemek amacıyla, alanında uzman avukatlarımızla
+            özel çözümler geliştirmeyi öncelik haline getirdik. Adaletin yerini
+            bulmasını garantilemek amacıyla, alanında uzman avukatlarımızla
             geniş hizmet yelpazemizi sürekli genişleterek sizlere ve işletmenize
             gereken desteği sağlamak için buradayız. Büromuzun kökleri,
             müvekkillerimizin haklarını koruma ve en iyi hukuki desteği sağlama
