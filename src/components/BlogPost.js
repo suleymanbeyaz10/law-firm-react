@@ -11,11 +11,11 @@ function BlogPost({ post }) {
       <div className="single-layout-1">
         <header className="entry-header">
           <div className="entry-meta">
-            <span className="posted-by author"> {post.author.name} </span>
+            <span className="posted-by author"> {post.authorName} </span>
           </div>
           <img
-            src={post.author.image}
-            alt={post.author.name}
+            src={post.imageUrl}
+            alt={post.authorName}
             className="img-style"
           />
         </header>
@@ -24,7 +24,7 @@ function BlogPost({ post }) {
         </div>
         <footer>
           <div className="author-info">
-            Yazar: {post.author.name} ({post.author.role})
+            Yazar: {post.authorName} ({post.authorRole})
           </div>
         </footer>
       </div>
