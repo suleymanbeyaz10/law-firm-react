@@ -1,11 +1,50 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import contactImage from "../assets/images/contact-image.jpg";
 
 function Contact() {
+  const [title, setTitle] = useState("");
+  const [content, setContent] = useState("");
+  //const [imageUrl, setImageUrl] = useState("");
+  const [address, setAddress] = useState("");
+  const [postalCode, setPostalCode] = useState("");
+  const [phone, setPhone] = useState("");
+  const [email, setEmail] = useState("");
+
+  // API'ya istek atma
+  useEffect(() => {
+    fetch("https://localhost:44383/api/Contacts")
+      .then((res) => res.json())
+      .then((data) => {
+        setData(data[0]);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  }, []);
+
+  // gelen verileri atama işlemi
+
+  const setData = ({
+    title,
+    content,
+
+    address,
+    postalCode,
+    phone,
+    email,
+  }) => {
+    setTitle(title);
+    setContent(content);
+    //setImageUrl(imageUrl);
+    setAddress(address);
+    setPostalCode(postalCode);
+    setPhone(phone);
+    setEmail(email);
+  };
+
   return (
     <div className="container my-5">
       <div className="row">
-        {/* İletişim resmi */}
         <div className="col-lg-6 mb-4">
           <img
             src={contactImage}
@@ -13,27 +52,23 @@ function Contact() {
             className="img-fluid rounded shadow"
           />
         </div>
-
-        {/* İletişim bilgileri ve form */}
         <div className="col-lg-6">
-          <h2 className="mb-4">Bizimle İletişime Geçin</h2>
-          <p>
-            Herhangi bir sorunuz varsa veya daha fazla bilgiye ihtiyacınız varsa
-            lütfen bizimle iletişime geçmekten çekinmeyin.
-          </p>
+          <h2 className="mb-4">{title}</h2>
+          <p>{content}</p>
           <p className="mb-4">
             <strong>
-              Zeytinburnu / İSTANBUL
+              {address}
               <br />
-              34025
+              {postalCode}
+              <br />
+              {phone}
               <br />
               TÜRKİYE
               <br />
             </strong>
-            <strong>Email:</strong> info@hukukburosu.com
+            <strong>Email:</strong> {email}
           </p>
 
-          {/* İletişim Formu */}
           <form>
             <div className="mb-3">
               <label htmlFor="name" className="form-label">

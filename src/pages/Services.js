@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faHome,
@@ -10,17 +10,38 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 function Services() {
+  const [title, setTitle] = useState("");
+  const [content, setContent] = useState("");
+
+  // API'ye istek atma
+
+  useEffect(() => {
+    fetch("https://localhost:44383/api/Services")
+      .then((res) => res.json())
+      .then((data) => {
+        // console.log(data[0]);
+        setData(data[0]);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  }, []);
+
+  // gelen verileri atama işlemi
+
+  const setData = ({ title, content }) => {
+    setTitle(title);
+    setContent(content);
+  };
+
   return (
     <div id="fh5co-practice" className="fh5co-bg-section">
       <div className="container">
         <div className="row animate-box fadeInUp animated-fast">
           <div className="col-md-offset-2 text-center fh5co-heading">
-            <h2>Hukuki Uygulama Alanlarımız</h2>
+            <h2>{title}</h2>
             <p style={styles.text}>
-              <strong>
-                En karmaşık davalarda bile size en iyi hukuki desteği sağlamak
-                için buradayız.
-              </strong>
+              <strong>{content}</strong>
             </p>
           </div>
         </div>
@@ -47,6 +68,8 @@ function Services() {
     </div>
   );
 }
+
+//database ayarı yapılmadığı için statik veri kullanıldı
 
 const serviceData = [
   {

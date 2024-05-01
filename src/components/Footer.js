@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFacebookF,
@@ -7,6 +7,44 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 
 function Footer() {
+  const [address, setAddress] = useState("");
+  const [postalCode, setPostalCode] = useState("");
+  const [phone, setPhone] = useState("");
+  const [email, setEmail] = useState("");
+  const [facebookAddress, setFacebookAddress] = useState("");
+  const [twitterAddress, setTwitterAddress] = useState("");
+  const [linkedinAddress, setLinkedinAddress] = useState("");
+
+  useEffect(() => {
+    fetch("https://localhost:44383/api/Contacts")
+      .then((res) => res.json())
+      .then((data) => {
+        setData(data[0]);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  }, []);
+
+  // gelen verileri atama işlemi
+  const setData = ({
+    address,
+    postalCode,
+    phone,
+    email,
+    facebookAddress,
+    twitterAddress,
+    linkedinAddress,
+  }) => {
+    setAddress(address);
+    setPostalCode(postalCode);
+    setPhone(phone);
+    setEmail(email);
+    setFacebookAddress("https://www.facebook.com/");
+    setTwitterAddress("https://www.twitter.com/");
+    setLinkedinAddress("https://www.linkedin.com/");
+  };
+
   return (
     <footer className="bg-dark text-white mt-5">
       <div className="container py-4">
@@ -14,11 +52,15 @@ function Footer() {
           <div className="col-md-4">
             <h5>Hukuk Bürosu</h5>
             <p>
-              Zeytinburnu / İSTANBUL
+              {address}
               <br />
-              34025
+              {postalCode}
               <br />
               TURKEY
+              <br />
+              {phone}
+              <br />
+              {email}
             </p>
           </div>
           <div className="col-md-4">
@@ -48,17 +90,17 @@ function Footer() {
           </div>
           <div className="col-md-4">
             <h5>Bizi Takip Edin</h5>
-            <a href="https://www.facebook.com" className="text-white me-2">
+            <a href={facebookAddress} className="text-white me-2">
               <FontAwesomeIcon icon={faFacebookF} /> Facebook
             </a>
             <br />
             <br />
-            <a href="https://www.twitter.com" className="text-white me-2">
+            <a href={twitterAddress} className="text-white me-2">
               <FontAwesomeIcon icon={faTwitter} /> Twitter
             </a>
             <br />
             <br />
-            <a href="https://www.linkedin.com" className="text-white">
+            <a href={linkedinAddress} className="text-white">
               <FontAwesomeIcon icon={faLinkedinIn} /> LinkedIn
             </a>
           </div>
